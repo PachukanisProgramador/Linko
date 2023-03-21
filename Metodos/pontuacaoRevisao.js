@@ -17,8 +17,8 @@ function pontuarCard(card, resultado){
 function chanceAparecerCard(){
   try{
     
-  }catch{
-    
+  }catch(erro){
+    console.log(erro);
   }
 }
 export {pontuarCard, chanceAparecerCard};
