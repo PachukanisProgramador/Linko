@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native';
 import { useRoute } from '@react-navigation/native';
-
+import { pontuarCard } from '../Metodos/pontuacaoRevisao';
 //banco
 
 import { revisar } from './Banco/ConsultarRevisao';
@@ -64,10 +64,14 @@ export default function Revisao ({ navigation }) {
           </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={
+            handleNextCard
+            }>
             <Text style={styles.buttonText1}>Errei</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={handleNextCard}>
+          <TouchableOpacity onPress={
+            handleNextCard
+          }>
             <Text style={styles.buttonText3}>Acertei</Text>
           </TouchableOpacity>
         </View>

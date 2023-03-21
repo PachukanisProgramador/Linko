@@ -1,5 +1,5 @@
 import { Alert, Text } from 'react-native';
-import { consultarUsuario } from '../Banco/ConsultarUsuario';
+import { consultarUsuario } from './../Telas/Banco/CadastroUsuario';
 
 function pontuarCard(card, resultado){
   try{
@@ -18,7 +18,7 @@ function chanceAparecerCard(){
   try{
     
   }catch{
-
+    
   }
 }
 export {pontuarCard, chanceAparecerCard};
