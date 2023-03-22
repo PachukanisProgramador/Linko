@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Button, StyleSheet, Modal, TextInput, TouchableOpacity, Text, ScrollView, ToastAndroid} from 'react-native';
+import { Alert, View, Button, StyleSheet, Modal, TextInput, TouchableOpacity, Text, ScrollView, ToastAndroid} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useRoute } from '@react-navigation/native';
 
@@ -61,6 +61,7 @@ export default function Decks ({ navigation }) {
         setModalVisible1(true);
     }
     const handleDelete = () => {
+        Alert.alert('Tem certeza?', ' você realmente quer excluir esse deck? Todos os cards serão excluídos junto.');
         deletarDeck(selectedDeck, inputs.email);
         setModalVisible1(false);
     };

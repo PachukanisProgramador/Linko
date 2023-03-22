@@ -39,6 +39,10 @@ function deletarDeck(nomeDeck, email) {
                 'DELETE FROM decks where nomeDeck = ? and idUsuario = ?',
                 [nomeDeck, email]
             );
+            tx.executeSql(
+                'DELETE FROM cards where nomeDeck = ? and idUsuario = ?',
+                [nomeDeck, email]
+            );
         });
         console.log("Excluído com sucesos!");
     } catch (error) {
