@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
 import { StyleSheet, View, Image, TextInput, Button, Text, ToastAndroid } from 'react-native';
-import { consultarUsuario } from './Banco/CadastroUsuario';
 import { verificarCredenciais } from '../Metodos/Usuario';
 
 //banco
@@ -35,6 +34,7 @@ const TelaLogin = ( { navigation } ) => {
       <Image
         source={require('../assets/logo-sem-fundo.png')}
         style={{width: 150, height: 150}}
+        resizeMode="stretch"
         />
       <TextInput
         style={{ 
@@ -78,10 +78,7 @@ const TelaLogin = ( { navigation } ) => {
               .then((resultadoCredenciais) =>{
                 if(resultadoCredenciais === true){
                   console.log("Login realizado com sucesso. Bem-vindo(a) " + inputs.email + "!");
-                  consultarUsuario(inputs.email)
-                  .then((usuario) => {
-                    navigation.navigate('BottomNav', {screen: 'Decks', params: { inputs }});
-                  });
+                  navigation.navigate('BottomNav', {screen: 'Decks', params: { inputs }});
                 }else {
                   ToastAndroid.show('Email ou senha incorretos', ToastAndroid.LONG);
                 }

@@ -13,12 +13,4 @@ function pontuarCard(card, resultado){
     console.log("Erro na função de pontuarCard: " + erro);
   }
 }
-
-function chanceAparecerCard(){
-  try{
-    
-  }catch(erro){
-    console.log(erro);
-  }
-}
-export {pontuarCard, chanceAparecerCard};
+export {pontuarCard};

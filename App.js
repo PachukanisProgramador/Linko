@@ -29,8 +29,8 @@ function BottomNav () {
 
           if (route.name === 'Decks') {
             iconName = 'list';
-          } else if (route.name === 'Tarefas') {
-            iconName = 'checkmark-circle';
+          } else if (route.name === 'Sobre') {
+            iconName = 'information-circle-outline';
           }
 
           // Retorna o ícone com o nome e cor definidos acima
@@ -41,7 +41,7 @@ function BottomNav () {
       })}
     >
       <Tab.Screen name="Decks" component={Decks} options={{ headerStyle: {backgroundColor: '#0C63E7'}, headerTintColor: '#fff' }}/>
-      <Tab.Screen name="Tarefas" component={Tarefas} options={{ headerStyle: {backgroundColor: '#0C63E7'}, headerTintColor: '#fff' }}/>
+      <Tab.Screen name="Sobre" component={Tarefas} options={{ headerStyle: {backgroundColor: '#0C63E7'}, headerTintColor: '#fff' }}/>
     </Tab.Navigator>
   );
 }

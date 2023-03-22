@@ -133,4 +133,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    errorText: {
+      color: 'red',
+      marginBottom: 10,
+      fontWeight: 'bold'
+    },
 });

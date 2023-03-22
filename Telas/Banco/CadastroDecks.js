@@ -21,6 +21,10 @@ function atualizarDeck(novoNome, id, email) {
                 'UPDATE decks set nomeDeck = ? where nomeDeck = ? and idUsuario = ?',
                 [novoNome, id, email]
             );
+            tx.executeSql(
+                'UPDATE cards set nomeDeck = ? where nomeDeck = ? and idUsuario = ?',
+                [novoNome, id, email]
+            );
         });
         console.log('Alteração concluída');
     } catch (error) {

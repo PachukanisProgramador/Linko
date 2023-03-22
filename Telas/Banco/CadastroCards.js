@@ -4,7 +4,7 @@ function inserirCartao(pergunta, resposta, nomeDeck, id) {
     try {
         db.transaction((tx) => {
             tx.executeSql(
-                'INSERT INTO cards (pergunta, resposta, nomeDeck, idUsuario) VALUES (?, ?, ?, ?)',
+                'INSERT INTO cards (pergunta, resposta, nomeDeck,idUsuario) VALUES (?, ?, ?, ?)',
                 [pergunta, resposta, nomeDeck, id]
             );
         });

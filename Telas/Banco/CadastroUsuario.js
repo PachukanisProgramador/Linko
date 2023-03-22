@@ -1,4 +1,5 @@
 import { db } from "./Connect";
+import { ToastAndroid } from 'react-native';
 
 function novoUsuario(nome, email, senha, repitaSenha) {
   try {
@@ -47,6 +48,7 @@ function consultarUsuario(emailUsuario) {
               resolve(resultado);
             } else {
               const mensagem = "Usuário " + emailUsuario + " não encontrado no banco de dados";
+              ToastAndroid.show('Usuário não encontrado', ToastAndroid.LONG);
               reject(mensagem);
             }
           });

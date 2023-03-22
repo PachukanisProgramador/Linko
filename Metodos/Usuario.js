@@ -1,4 +1,4 @@
-import { Alert, Text } from 'react-native';
+import { Alert, ToastAndroid } from 'react-native';
 import { consultarUsuario } from '../Telas/Banco/CadastroUsuario';
 
 function verificarCredenciais(emailUsuario, senhaUsuario){
@@ -10,6 +10,7 @@ function verificarCredenciais(emailUsuario, senhaUsuario){
           resolve(true);
         }else{
           const mensagem = "Senha incorreta do usuário "  + emailUsuario;
+          ToastAndroid.show('Email ou senha incorretos', ToastAndroid.LONG);
           reject(mensagem);
         }
       })
@@ -28,7 +29,7 @@ function verificarTrocaDeSenha(emailUsuario, novaSenha){
       consultarUsuario(emailUsuario)
       .then((usuario) => {
         console.log(usuario);
-        if(emailUsuario === usuario.email_usuario && novaSenha != usuario.senha && novaSenha.length >= 8){
+        if(emailUsuario === usuario.email && novaSenha != usuario.senha && novaSenha.length <= 8){
           resolve(true);
         }else if (novaSenha === usuario.senha){
           console.log("Senha atual do usuário: " + usuario.senha + " | Senha nova: " + novaSenha);

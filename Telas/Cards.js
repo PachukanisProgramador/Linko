@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Button, Text, TouchableOpacity, StyleSheet, ScrollView, Modal, TextInput } from 'react-native';
+import { View, Button, Text, TouchableOpacity, StyleSheet, ScrollView, Modal, TextInput, ToastAndroid } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 
 //banco
@@ -47,8 +47,14 @@ export default function Cards ({ navigation }) {
         setIsModalVisible(false);
     };
     const handleSave = () => {
-        inserirCartao(pergunta, resposta, title, inputs.email);
-        handleModalClose();
+        if (pergunta.length > 0 && resposta.length > 0){
+            inserirCartao(pergunta, resposta, title, inputs.email);
+            setTextPergunta('');
+            setTextResposta('');
+            handleModalClose();
+        }else{
+            ToastAndroid.show('Insira uma pergunta e uma resposta para o card', ToastAndroid.LONG);
+        }
     };
 
     //Modal que abre para ATUALIZAR cards
