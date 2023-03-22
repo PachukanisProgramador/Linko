@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { View, Text, StyleSheet, Image} from 'react-native';
 
 //telas
 
@@ -40,8 +41,8 @@ function BottomNav () {
         tabBarInactiveTintColor: 'gray',
       })}
     >
-      <Tab.Screen name="Decks" component={Decks} options={{ headerStyle: {backgroundColor: '#0C63E7'}, headerTintColor: '#fff' }}/>
-      <Tab.Screen name="Sobre" component={Tarefas} options={{ headerStyle: {backgroundColor: '#0C63E7'}, headerTintColor: '#fff' }}/>
+      <Tab.Screen name="Decks" component={Decks} options={{ headerTitleAlign:'center', headerStyle: {backgroundColor: '#0C63E7'}, headerTintColor: '#fff' }}/>
+      <Tab.Screen name="Sobre" component={Tarefas} options={{title: 'Sobre',headerTitleAlign:'center', headerStyle: {backgroundColor: '#0C63E7'}, headerTintColor: '#fff' }}/>
     </Tab.Navigator>
   );
 }
@@ -53,7 +54,7 @@ function MainNavigator() {
       <Navegar.Screen name="TelaCadastrar" component={TelaCadastrar} options={{ headerShown: false }} />
       <Navegar.Screen name="TelaTrocaSenha" component={TelaTrocaSenha} options={{ headerShown: false }} />
       <Navegar.Screen name="Cards" component={Cards} options={{ headerStyle: {backgroundColor: '#0C63E7'}, headerTintColor: '#fff' }}/>
-      <Navegar.Screen name="Revisão" component={Revisao} options={{ headerStyle: {backgroundColor: '#0C63E7'}, headerTintColor: '#fff' }}/>
+      <Navegar.Screen name="Revisão" component={Revisao} options={{headerTitleAlign:'center', headerStyle: {backgroundColor: '#0C63E7'}, headerTintColor: '#fff' }}/>
       <Navegar.Screen name="BottomNav" component={BottomNav} options={{ headerShown: false }} />
     </Navegar.Navigator>
   );
